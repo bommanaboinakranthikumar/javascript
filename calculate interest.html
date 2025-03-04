@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple and Compound Interest</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width , initial-scale=1.0">
+</head>
+<body>
+<h2>Simple and Compound Interest Calculation</h2>
+<input type="number" id="principal" placeholder="Enter Principal Amount">
+<input type="number" id="time" placeholder="Enter Time">
+<input type="number" id="rate" placeholder="Enter Rate of Interest">
+<button onclick="calculateInterest()">Convert</button>
+
+<p id="simple_intetest"></p>
+<p id="compound_intetest"></p>
+
+<script>
+function calculateInterest(){
+    // Get values from input fields
+     principal = parseFloat(document.getElementById("principal").value);
+     time = parseFloat(document.getElementById("time").value);
+     rate = parseFloat(document.getElementById("rate").value);
+
+    
+simpleInterest = (principal * time * rate) / 100;
+compoundInterest = principal * Math.pow(1 + rate / 100, time) - principal;
+document.getElementById("simple_intetest").innerText = "Simple Interest: " + simpleInterest.toFixed(2);
+    document.getElementById("compound_intetest").innerText = "Compound Interest: " + compoundInterest.toFixed(2);
+}
+</script>
+</body>
+</html>
